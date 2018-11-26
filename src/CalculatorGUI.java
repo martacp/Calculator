@@ -10,7 +10,8 @@ import javafx.stage.Stage;
 
 public class CalculatorGUI extends Application {
 
-    Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnAddition, btnSubtraction, btnDivide, btnMultiply, btnEquals, btnClear, btnOpposite, btnPoint, btnPower, btnRoot;
+    Button  btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnAddition, btnSubtraction, btnDivide,
+            btnMultiply, btnEquals, btnClear, btnOpposite, btnPoint, btnPower, btnRoot;
     String currentValue;
     Stage window;
     Scene scene;
@@ -280,8 +281,8 @@ public class CalculatorGUI extends Application {
         grid.getChildren().addAll( btn1,      btn2,        btn3,    btnClear,
                                    btn4,      btn5,        btn6,    btnAddition,
                                    btn7,      btn8,        btn9,    btnSubtraction,
-                                   btnDivide, btnMultiply, btn0,    btnOpposite,
-                                   btnPoint,  btnPower,    btnRoot, btnEquals);
+                                   btnDivide, btnMultiply, btn0,    btnEquals,
+                                   btnPoint,  btnPower,    btnRoot, btnOpposite);
         borderPane.setCenter(grid);
 
         scene = new Scene(borderPane, 320, 400);
