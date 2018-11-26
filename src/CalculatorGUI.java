@@ -111,10 +111,12 @@ public class CalculatorGUI extends Application {
         btnAddition = new Button("+");
         btnAddition.setOnAction(e -> {
 
-            operation.setOperand1(Double.parseDouble(screen.getText()));
-            operation.setOperation("+");
-            currentValue = "";
-            screen.setText(currentValue);
+            if(operation.isNumber(screen.getText())) {
+                operation.setOperand1(Double.parseDouble(screen.getText()));
+                operation.setOperation("+");
+                currentValue = "";
+                screen.setText(currentValue);
+            }
         });
         grid.setConstraints(btnAddition, 3, 1);
         btnAddition.setMinSize(65,45);
@@ -162,10 +164,12 @@ public class CalculatorGUI extends Application {
         //4th row
         btnDivide = new Button("/");
         btnDivide.setOnAction(e -> {
-            operation.setOperand1( Double.parseDouble( screen.getText() ) );
-            operation.setOperation("/");
-            currentValue = "";
-            screen.setText("");
+            if(operation.isNumber(screen.getText())) {
+                operation.setOperand1(Double.parseDouble(screen.getText()));
+                operation.setOperation("/");
+                currentValue = "";
+                screen.setText("");
+            }
         });
         grid.setConstraints(btnDivide, 0, 3);
         btnDivide.setMinSize(65,45);
@@ -173,10 +177,12 @@ public class CalculatorGUI extends Application {
 
         btnMultiply = new Button("*");
         btnMultiply.setOnAction(e -> {
-            operation.setOperand1( Double.parseDouble( screen.getText() ) );
-            operation.setOperation("*");
-            currentValue = "";
-            screen.setText("");
+            if(operation.isNumber(screen.getText())) {
+                operation.setOperand1( Double.parseDouble( screen.getText() ) );
+                operation.setOperation("*");
+                currentValue = "";
+                screen.setText("");
+            }
         });
         grid.setConstraints(btnMultiply, 1, 3);
         btnMultiply.setMinSize(65,45);
@@ -193,11 +199,13 @@ public class CalculatorGUI extends Application {
 
         btnEquals = new Button("=");
         btnEquals.setOnAction(e -> {
-            operation.setOperand2( Double.parseDouble( screen.getText() ));
-            operation.executeOperation();
-            currentValue = String.valueOf(operation.getResult());
-            screen.setText(currentValue);
-            operation.reset();
+            if(operation.isNumber(screen.getText())) {
+                operation.setOperand2(Double.parseDouble(screen.getText()));
+                operation.executeOperation();
+                currentValue = String.valueOf(operation.getResult());
+                screen.setText(currentValue);
+                operation.reset();
+            }
         });
         grid.setConstraints(btnEquals, 3, 3);
         btnEquals.setMinSize(65,45);
@@ -228,10 +236,12 @@ public class CalculatorGUI extends Application {
 
         btnPower = new Button("^x");
         btnPower.setOnAction(e ->{
-            operation.setOperand1(Double.parseDouble(screen.getText()));
-            operation.setOperation("^");
-            currentValue = "";
-            screen.setText(currentValue);
+            if(operation.isNumber(screen.getText())) {
+                operation.setOperand1(Double.parseDouble(screen.getText()));
+                operation.setOperation("^");
+                currentValue = "";
+                screen.setText(currentValue);
+            }
         });
         grid.setConstraints(btnPower, 1, 4);
         btnPower.setMinSize(65,45);
@@ -239,12 +249,14 @@ public class CalculatorGUI extends Application {
 
         btnRoot = new Button("sqrt"); //U+221A
         btnRoot.setOnAction(e -> {
-            operation.setOperand1(Double.parseDouble(screen.getText()));
-            operation.setOperation("sqrt");
-            operation.executeOperation();
-            currentValue = String.valueOf(operation.getResult());
-            screen.setText(currentValue);
-            operation.reset();
+            if(operation.isNumber(screen.getText())) {
+                operation.setOperand1(Double.parseDouble(screen.getText()));
+                operation.setOperation("sqrt");
+                operation.executeOperation();
+                currentValue = String.valueOf(operation.getResult());
+                screen.setText(currentValue);
+                operation.reset();
+            }
         });
         grid.setConstraints(btnRoot, 2, 4);
         btnRoot.setMinSize(65,45);
@@ -252,12 +264,14 @@ public class CalculatorGUI extends Application {
 
         btnOpposite = new Button("1/x");
         btnOpposite.setOnAction(e -> {
-            operation.setOperand1(Double.parseDouble(screen.getText()));
-            operation.setOperation("1/x");
-            operation.executeOperation();
-            currentValue = String.valueOf(operation.getResult());
-            screen.setText(currentValue);
-            operation.reset();
+            if(operation.isNumber(screen.getText())) {
+                operation.setOperand1(Double.parseDouble(screen.getText()));
+                operation.setOperation("1/x");
+                operation.executeOperation();
+                currentValue = String.valueOf(operation.getResult());
+                screen.setText(currentValue);
+                operation.reset();
+            }
         });
         grid.setConstraints(btnOpposite, 3, 4);
         btnOpposite.setMinSize(65,45);

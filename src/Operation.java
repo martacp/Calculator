@@ -35,13 +35,15 @@ public class Operation {
         Result = 0;
     }
 
-    public void isNumber(String text){
+    public boolean isNumber(String text){
         try{
             double number = Double.parseDouble(text);
+            return true;
         }catch(NumberFormatException e){
             Operand1 = 0;
             Operand2 = 0;
             System.out.println("Not a number!");
+            return false;
         }
     }
 
